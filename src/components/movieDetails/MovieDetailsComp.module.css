@@ -1,0 +1,50 @@
+.movieTitle {
+    font-size: larger;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+/* .movieInfoAll{
+    margin: 1rem;
+} */
+
+.movieInfo {
+    /* font-size: larger; */
+    margin: 2rem;
+}
+
+.movieInfo p {
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+/* .movieRatings {
+    margin: 1rem;
+} */
+
+.movieRatings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    border: 0.1rem solid black;
+    box-shadow: 0rem 0rem 1rem #7c7a7a;
+  }
+  
+  .movieRatings p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .movieRatings .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+  }
+
+
+
+

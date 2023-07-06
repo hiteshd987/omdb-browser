@@ -17,7 +17,9 @@ export default function Search() {
       <main className={`${styles.main} ${inter.className}`}>
         {/* update with search page code */}
         {/* Edit file [src/pages/index.tsx] to update this page with search logic. */}
+        <>
         <SearchBar />
+        </>
       </main>
     </>
   )
