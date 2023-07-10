@@ -1,0 +1,15 @@
+.searchBar {
+  width: 100vh;
+}
+
+.container {
+  /* background-color: rgb(255, 255, 255); */
+  margin: 0;
+}
+
+.container h1 {
+  font-size: 3rem;
+  color: rgb(35, 35, 37);
+  text-shadow: 1px 1px #0b0b0b;
+  margin-left: 1rem;
+}

@@ -1,72 +1,42 @@
-// import Head from 'next/head'
-// import { Inter } from 'next/font/google'
-// import styles from '@/styles/Recommend.module.css'
+import RecommendMovies from "../components/recommend/RecommendMovies";
+import { GetStaticProps } from "next";
+import { getMovies } from "../../services/api/index";
 
-// const inter = Inter({ subsets: ['latin'] })
-
-// export default function Recommend() {
-//   return (
-//     <>
-//       <Head>
-//         <title>OMDB Browser - Recommendations</title>
-//         <meta name="description" content="Get movie recommendations." />
-//         <meta name="viewport" content="width=device-width, initial-scale=1" />
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-//       <main className={`${styles.main} ${inter.className}`}>
-//         {/* update with recommendations page code */}
-//         Edit file [src/pages/recommend.tsx] to update this page with recommendations logic.
-//       </main>
-//     </>
-//   )
-// }
-
-import { useState, useEffect } from 'react';
-import { Card } from 'antd';
-
-interface MovieData {
+interface Movie {
   Title: string;
-  Year: string;
-  Rated: string;
-  Released: string;
-  Runtime: string;
+  Poster: string;
   imdbID: string;
-  Poster: any;
-  Search: any;
-  // ...
+  Year: string;
 }
 
-function RandomMovies() {
-  const [movies, setMovies] = useState<MovieData[]>([]);
+interface Props {
+  movies: Movie[];
+}
 
-  const fetchRandomMovies = async () => {
-    const date = new Date();
-    const dateString = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    const response = await fetch(`http://www.omdbapi.com/?s=random&apikey=d25cc249&y=${dateString}`);
-    const data = await response.json();
-    const randomIndexes = Array.from({ length: 5 }, () => Math.floor(Math.random() * data.Search.length));
-    const randomMovies = randomIndexes.map((index) => data.Search[index]);
-    const movieResponses = await Promise.all(randomMovies.map((movie) => fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=d25cc249`)));
-    const movieData = await Promise.all(movieResponses.map((response) => response.json()));
-    setMovies(movieData);
-  };
-
-  useEffect(() => {
-    fetchRandomMovies();
-  }, []);
-
+const Recommend = ({ movies }: Props) => {
   return (
-    <div>
-      <h1>Random Movies</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {movies.map((movie) => (
-          <Card hoverable style={{ width: 240, margin: '16px' }} cover={<img alt={movie.Title} src={movie.Poster} />}>
-            <Card.Meta title={movie.Title} description={movie.Year} />
-          </Card>
-        ))}
-      </div>
-    </div>
+    <>
+      <RecommendMovies movies={movies} />
+    </>
   );
-}
+};
 
-export default RandomMovies;
+// To get movie recommendation based on str and change everyday
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const id = null;
+  const str = "Harry";
+  // const res = await fetch("https://random-word-api.herokuapp.com/word");
+  // const str = await res.text();
+  const pageno = null;
+  const moviesData = await getMovies(id, str, pageno);
+  const movies = moviesData.Search;
+
+  return {
+    props: {
+      movies,
+    },
+    revalidate: 60 * 60 * 24, // refresh every day
+  };
+};
+
+export default Recommend;
