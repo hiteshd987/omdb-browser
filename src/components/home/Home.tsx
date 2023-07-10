@@ -5,9 +5,8 @@ import { useRouter } from "next/router";
 import { Input, Col, Divider, Row, Card } from "antd";
 import Image from "next/image";
 import styles from "./Home.module.css";
-// import ImgCarousel from "../carousel/Carousel";
-import Pagination from "../pagination/Pagination";
-import { getMovies } from "../../../services/api";
+import Pagination from "@/components/pagination/Pagination";
+import { getMovies } from "../../../services/api/index";
 
 const inter = Inter({ subsets: ["latin"] });
 const { Search } = Input;
@@ -62,10 +61,9 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <>
-      {/* <ImgCarousel width={200} height={200}/>  */}
-
       {showSearch && (
-        <>
+        <Row gutter={[16, 16]}>
+          <Col xs={24} sm={24} md={24} lg={8}>
           <Search
             className={styles.searchBar}
             placeholder="Search Movie"
@@ -74,7 +72,8 @@ const Home: React.FC<HomeProps> = () => {
             enterButton
             required
           />
-        </>
+          </Col>
+        </Row>
       )}
 
       <Divider key="divider" orientation="left" />

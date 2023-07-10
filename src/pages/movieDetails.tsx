@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import MovieDetailsComp from "@/components/movieDetails/MovieDetailsComp";
+import MovieDetailsComp from "@/components/movieDetails/MovieDetails";
 
 const MovieDetails = () => {
   const router = useRouter();

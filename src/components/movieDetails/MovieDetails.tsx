@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Tabs, Divider } from "antd";
 import Image from "next/image";
-import styles from "./MovieDetailsComp.module.css";
+import styles from "./MovieDetails.module.css";
 import Link from "next/link";
 import { getMovies } from "../../../services/api";
 const { TabPane } = Tabs;

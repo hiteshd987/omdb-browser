@@ -1,9 +1,9 @@
 .searchBar {
   width: 100vh;
+  margin-right: 8rem;
 }
 
 .container {
-  /* background-color: rgb(255, 255, 255); */
   margin: 0;
 }
 

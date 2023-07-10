@@ -38,8 +38,3 @@
   align-items: center;
   margin: 1rem;
 }
-
-.ant-divider-vertical {
-  box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.1);
-  height: auto;
-}
