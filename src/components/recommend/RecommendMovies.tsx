@@ -1,4 +1,5 @@
 import { Card } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./RecommendMovies.module.css";
 
@@ -13,7 +14,7 @@ interface Props {
   movies: Movie[];
 }
 
-// Iterate data from props to show Cards
+// Iterate data from props to show Cards with recommended movies
 const RecommendMovies = ({ movies }: Props) => {
   return (
     <div className={styles.recommendContainer} key="divMain">
@@ -34,8 +35,16 @@ const RecommendMovies = ({ movies }: Props) => {
             <Card
               key={movie.imdbID}
               hoverable
-              style={{ width: 300, margin: "16px" }}
-              cover={<img alt={movie.Title} src={movie.Poster} />}
+              className={styles.recommendMovieCard}
+              // style={{ width: 300, margin: "16px" }}
+              cover={
+                <Image
+                  src={movie.Poster}
+                  width={200}
+                  height={450}
+                  alt={movie.Title}
+                />
+              }
             >
               <Card.Meta title={movie.Title} description={movie?.Year} />
             </Card>

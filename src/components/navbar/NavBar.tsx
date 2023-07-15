@@ -24,6 +24,12 @@ const NavBar: React.FC<NavBarProps> = () => (
         <li>
           <Link href="/recommend">Recommendations</Link>
         </li>
+        <li>
+          <Link href="/">Genre</Link>
+        </li>
+        <li>
+          <Link href="/">Browse by Langauges</Link>
+        </li>
       </div>
     </ul>
   </nav>

@@ -24,7 +24,7 @@ const Recommend = ({ movies }: Props) => {
 // To get movie recommendation based on str and change everyday
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const id = null;
-  const str = "Harry";
+  const str = "Love";
   // const res = await fetch("https://random-word-api.herokuapp.com/word");
   // const str = await res.text();
   const pageno = null;

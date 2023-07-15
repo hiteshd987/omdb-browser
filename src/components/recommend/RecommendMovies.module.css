@@ -14,3 +14,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.recommendMovieCard {
+  width: 19rem;
+  margin: 1rem;
+  height: 35rem;
+}

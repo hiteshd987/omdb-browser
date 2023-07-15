@@ -24,6 +24,7 @@
   align-items: center;
   border: 0.1rem solid black;
   box-shadow: 0rem 0rem 1rem #7c7a7a;
+  margin: 1rem;
 }
 
 .movieRatings p {
@@ -37,4 +38,30 @@
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
+}
+
+.movieCard {
+  width: auto;
+  height: 30rem;
+  margin: 2rem;
+}
+
+/* style={{ width: 300, margin: "16px" }} */
+
+.relatedMovieCard {
+  width: auto;
+  /* height: 15rem; */
+  margin: 1.5rem;
+}
+
+.column1Style {
+  height: max-content;
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
+  margin-right: 1rem;
+}
+
+.column2Style {
+  height: auto;
+  border-right: solid 1px black;
 }
