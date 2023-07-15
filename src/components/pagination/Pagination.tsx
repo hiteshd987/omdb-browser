@@ -5,7 +5,6 @@ import { Pagination } from "antd";
 type PaginationProps = {
   current: number;
   total: number;
-  // pageSize: number;
   onChange: (page: number) => void;
   hideOnSinglePage: boolean;
 };

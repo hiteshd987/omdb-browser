@@ -85,7 +85,6 @@ const MovieDetailsComp: React.FC<MovieProps> = ({ id }) => {
                   <Card
                     hoverable
                     className={styles.movieCard}
-                    // style={{ width: 450, height: 450, margin: "2rem" }}
                     cover={
                       <Image
                         src={
@@ -110,10 +109,6 @@ const MovieDetailsComp: React.FC<MovieProps> = ({ id }) => {
                   </Card>
 
                   <div>
-                    {/* <Row className={styles.movieTitle} style={{textTransform : 'uppercase'}}>
-                          {tabsData.Title}
-                          </Row> */}
-
                     <Row className={styles.movieInfo}>
                       {movie?.Rated},{movie?.Runtime}
                     </Row>
@@ -203,7 +198,6 @@ const MovieDetailsComp: React.FC<MovieProps> = ({ id }) => {
                       <Card
                         hoverable
                         className={styles.relatedMovieCard}
-                        // style={{ width: 300, margin: "16px" }}
                         cover={
                           <Image
                             src={

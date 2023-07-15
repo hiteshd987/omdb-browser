@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Col, Divider, Row, Card, Input, Spin } from "antd";
@@ -7,7 +6,6 @@ import Image from "next/image";
 import styles from "./Home.module.css";
 import Pagination from "@/components/pagination/Pagination";
 import { getMovies } from "../../../services/api/index";
-// const inter = Inter({ subsets: ["latin"] });
 const { Search } = Input;
 
 type HomeProps = {};
@@ -64,12 +62,6 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <>
       {showSearch && (
-        // <AutoComplete
-        //   className={styles.searchBar}
-        //   placeholder="Search Movie"
-        //   allowClear
-        //   onSearch={handleSearch}
-        // />
         <Search
           className={styles.searchBar}
           placeholder="Search Movie"
@@ -106,7 +98,6 @@ const Home: React.FC<HomeProps> = () => {
                         <Card
                           hoverable
                           className={styles.cardStyle}
-                          // style={{ width: 240, height: "auto", margin: "16px" }}
                           cover={
                             <Image
                               src={

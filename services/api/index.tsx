@@ -10,6 +10,6 @@ export const getMovies = async (id: any, str: string, pageno: any) => {
     );
     return response.json();
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching data:", error);
   }
 };

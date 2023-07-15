@@ -36,7 +36,6 @@ const RecommendMovies = ({ movies }: Props) => {
               key={movie.imdbID}
               hoverable
               className={styles.recommendMovieCard}
-              // style={{ width: 300, margin: "16px" }}
               cover={
                 <Image
                   src={movie.Poster}

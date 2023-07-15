@@ -25,8 +25,6 @@ const Recommend = ({ movies }: Props) => {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const id = null;
   const str = "Love";
-  // const res = await fetch("https://random-word-api.herokuapp.com/word");
-  // const str = await res.text();
   const pageno = null;
   const moviesData = await getMovies(id, str, pageno);
   const movies = moviesData.Search;
