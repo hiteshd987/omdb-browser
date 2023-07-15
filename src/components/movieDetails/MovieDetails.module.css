@@ -46,11 +46,8 @@
   margin: 2rem;
 }
 
-/* style={{ width: 300, margin: "16px" }} */
-
 .relatedMovieCard {
   width: auto;
-  /* height: 15rem; */
   margin: 1.5rem;
 }
 
@@ -64,4 +61,11 @@
 .column2Style {
   height: auto;
   border-right: solid 1px black;
+}
+
+.spinningDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

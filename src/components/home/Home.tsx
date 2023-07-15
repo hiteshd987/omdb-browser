@@ -27,13 +27,12 @@ const Home: React.FC<HomeProps> = () => {
   const [movies, setMovies] = useState<MovieData[]>([]);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const [searchedData, setSearchedData] = useState("");
   const [movieTitle, setMovieTitle] = useState("iron");
   const [isLoading, setIsLoading] = useState(false);
+  const [searchedData, setSearchedData] = useState("");
 
   //Get data for Listing and Pagination
   const handleFetchData = async (page: any) => {
-    setIsLoading(true);
     const movieId = null;
     const searchQuery = searchedData ? searchedData : movieTitle;
     const pageNumber = page;
@@ -50,8 +49,8 @@ const Home: React.FC<HomeProps> = () => {
   };
 
   useEffect(() => {
-    handleFetchData(page);
-  }, [page]);
+    handleFetchData(1);
+  }, [searchedData]);
 
   //Pass searched keyword in the URL and get matching results
   const handleSearch = async (searchValue: string) => {
@@ -74,7 +73,9 @@ const Home: React.FC<HomeProps> = () => {
       <Divider key="divider" orientation="left" />
 
       {isLoading ? (
-        <Spin size="large" />
+        <div className={styles.spinningDiv}>
+          <Spin size="large" />
+        </div>
       ) : (
         <>
           {

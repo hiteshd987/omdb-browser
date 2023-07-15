@@ -67,9 +67,11 @@ const MovieDetailsComp: React.FC<MovieProps> = ({ id }) => {
   return (
     <>
       {isLoading ? (
-        <Spin size="large" />
+        <div className={styles.spinningDiv}>
+          <Spin size="large" />
+        </div>
       ) : (
-        <Row key="rowMain" className={inter.className} gutter={[16, 16]}>
+        <Row key="containerRow" className={inter.className} gutter={[16, 16]}>
           {
             // Three columns to show movie Card with details and some related movies based on Genre
             movie ? (
