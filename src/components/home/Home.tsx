@@ -33,6 +33,7 @@ const Home: React.FC<HomeProps> = () => {
 
   //Get data for Listing and Pagination
   const handleFetchData = async (page: any) => {
+    setIsLoading(true);
     const movieId = null;
     const searchQuery = searchedData ? searchedData : movieTitle;
     const pageNumber = page;
