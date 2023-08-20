@@ -54,7 +54,7 @@ const MovieDetailsComp: React.FC<MovieProps> = ({ id }) => {
       const genreData = await getMovies(null, keyword, pageNumber);
       setRelatedMV(genreData.Search as MovieData[]);
     } catch (error) {
-      console.log("Error fetching Data", error);
+      console.error("Error fetching Data", error);
     } finally {
       setIsLoading(false);
     }

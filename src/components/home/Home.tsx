@@ -56,7 +56,6 @@ const Home: React.FC<HomeProps> = () => {
   //Pass searched keyword in the URL and get matching results
   const handleSearch = async (searchValue: string) => {
     setSearchedData(searchValue);
-    handleFetchData(1);
   };
 
   return (
